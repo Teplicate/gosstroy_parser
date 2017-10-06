@@ -1,6 +1,8 @@
 package main;
 
-import connector.Method;
+import methods.Method;
+import entity.BuildingData;
+import entity.EntityBuilder;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -17,7 +19,8 @@ public class Main {
         Method method = new Method(httpClient);
         HttpResponse response = method.postMethod(" 02:55:020105:1947");
         String url = parser.parseGetRef(response);
-        parser.parseData(url);
-
+        String [] data = parser.parseData(url);
+        BuildingData buildingData = EntityBuilder.build(data);
+        System.out.println(buildingData);
     }
 }
