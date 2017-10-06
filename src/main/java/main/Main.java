@@ -15,7 +15,9 @@ public class Main {
         Parser parser = new Parser();
         HttpClient httpClient = HttpClients.createDefault();
         Method method = new Method(httpClient);
-        HttpResponse response = method.PostMethod(" 02:55:020105:1947");
-        parser.parseGetRef(response);
+        HttpResponse response = method.postMethod(" 02:55:020105:1947");
+        String url = parser.parseGetRef(response);
+        parser.parseData(url);
+
     }
 }

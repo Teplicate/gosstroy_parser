@@ -4,6 +4,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -22,7 +23,7 @@ public class Method {
         this.httpClient = httpClient;
     }
 
-    public HttpResponse PostMethod(String data) throws IOException
+    public HttpResponse postMethod(String data) throws IOException
     {
         HttpPost httpPost = new HttpPost("https://rosreestr.ru/wps/portal/" +
                 "p/cc_ib_portal_services/online_request/!ut/p/z1/04_Sj9CPykssy0xP" +
@@ -45,12 +46,4 @@ public class Method {
 
         return response;
     }
-
-    
-
-
-
-
-
-
 }
