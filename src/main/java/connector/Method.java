@@ -46,14 +46,11 @@ public class Method {
         return response;
     }
 
+    
 
 
 
 
-    public static void main(String[] args) throws IOException{
 
-        HttpClient httpClient = HttpClients.createDefault();
-        Method method = new Method(httpClient);
-        method.PostMethod(" 02:55:020105:1947");
-    }
+
 }
