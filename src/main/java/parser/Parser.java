@@ -38,7 +38,7 @@ public class Parser {
         {
             if (i == 22)
             {
-                data[k++] = rows.get(i + 1).text();
+                data[k++] = rows.get(i + 1).text().trim();
                 continue;
             }
             data[k++] = rows.get(i).text();
