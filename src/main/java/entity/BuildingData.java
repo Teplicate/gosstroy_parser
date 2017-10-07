@@ -1,20 +1,50 @@
 package entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Building_data")
 public class BuildingData {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "Cad_num")
     private String cadNum;
+    @Column(name = "Status")
     private String objectStatus;
+    @Column(name = "Reg_date")
     private String cadNumDate;
+    @Column(name = "Floors")
     private String floors;
+    @Column(name = "Square")
     private String square;
+    @Column(name = "Unit")
     private String unit;
+    @Column(name = "Cost")
     private String cadCost;
+    @Column(name = "Cost_date")
     private String costReg;
+    @Column(name = "Cost_affirmation")
     private String costAffirmation;
+    @Column(name = "Cost_definition")
     private String costDefinition;
+    @Column(name = "Address")
     private String address;
+    @Column(name = "Type")
     private String type;
+    @Column(name = "Update_date")
     private String updateDate;
+
+    public long getId() {
+        return id;
+    }
+
+    public BuildingData setId(long id) {
+        this.id = id;
+        return this;
+    }
 
     public String getCadNum() {
         return cadNum;
